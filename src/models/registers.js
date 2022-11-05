@@ -8,6 +8,27 @@ const userSchema = new mongoose.Schema({
     lastname : {
         type:String,
         required:true
+    },
+    boardroll : {
+        type:Number,
+        required:true,
+        unique:true
+    },
+    semester : {
+        type:String, 
+        required:true
+    },
+    gender : {
+        type:String,
+        required:true
+    },
+    shift : {
+        type:String,
+        required:true
+    },
+    department : {
+        type:String, 
+        required:true
     }
 })
 

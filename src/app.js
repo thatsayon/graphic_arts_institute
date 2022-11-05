@@ -42,7 +42,12 @@ app.post('/confirm', async (req, res) => {
     try {
         const registerUser = new Register({
             firstname : req.body.firstname,
-            lastname : req.body.lastname
+            lastname : req.body.lastname,
+            boardroll : req.body.boardroll,
+            semester : req.body.semester,
+            gender : req.body.gender,
+            shift : req.body.shift,
+            department : req.body.department
         })
 
         const register = await registerUser.save()
