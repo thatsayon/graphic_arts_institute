@@ -1,13 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    {{>header}}
 </head>
+
 <body>
-    {{>navbar}}
-    <h1>hi</h1>
+    <div class="main">
+        <div class="form">
+
+            <div class="login-info">
+                <ul>
+                    <li><a href="#" class="line line2" id="login">Login</a></li>
+                    <li><a href="#" class="line" id="signup">Sign Up</a></li>
+                </ul>
+            </div>
+
+
+            <div class="login " id="main-login">
+                <input type="email" placeholder="Enter your boardroll" class="input" />
+                <br />
+                <input type="email" placeholder="Enter password" class="input" />
+
+                <div class="container"><a href="#" class="for">Forgot Password?</a>
+                    <button class="btn">Login</button>
+                </div>
+
+            </div>
+
+
+            <div class="signup hide" id="main-signup">
+                <input type="email" placeholder="Enter your Firstname" class="input" />
+                <br />
+                <input type="email" placeholder="Enter your lastname" class="input" />
+                <br>
+                <input type="email" placeholder="Board Roll" class="input" />
+                <div class="two ">
+
+
+                    <select required>
+                        <option value="" disabled selected hidden>Semister</option>
+                        <option value="0">First</option>
+                        <option value="1">Second</option>
+                        <option value="0">Third</option>
+                        <option value="1">Fourth</option>
+                        <option value="1">Fifth</option>
+                        <option value="0">Sixth</option>
+                        <option value="1">Seventh</option>
+                        <option value="0">Eigth</option>
+
+                    </select>
+
+
+
+                    <select required>
+                        <option value="" disabled selected hidden>Gender</option>
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                    </select>
+
+                    <br>
+
+                    <select required>
+                        <option value="" disabled selected hidden>Shift</option>
+                        <option value="0">First</option>
+                        <option value="1">Second</option>
+
+                    </select>
+
+
+
+                    <select required>
+                        <option value="" disabled selected hidden>Department</option>
+                        <option value="0">Computer</option>
+                        <option value="1">Science and technology</option>
+                        <option value="0">Printing Technology</option>
+                        <option value="0">Graphic design</option>
+                    </select>
+                </div>
+                <div class="btn-div">
+                    <button class="btn2">Sign up</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="part2">
+            <h1 class="h1">Graphic Arts Institute</h1>
+            {{>svg}}
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login').addEventListener("click", () => {
+            document.getElementById('main-login').classList.remove('hide');
+            document.getElementById('main-signup').classList.add('hide');
+            document.getElementById('login').classList.add('done');
+            document.getElementById('signup').classList.remove('done');
+            document.getElementById('login').classList.add('line2');
+            document.getElementById('signup').classList.remove('line2');
+        })
+
+
+        document.getElementById('signup').addEventListener("click", () => {
+            document.getElementById('main-login').classList.add('hide');
+            document.getElementById('main-signup').classList.remove('hide');
+            document.getElementById('login').classList.remove('done');
+            document.getElementById('signup').classList.add('done');
+            document.getElementById('login').classList.remove('line2');
+            document.getElementById('signup').classList.add('line2');
+        })
+    </script>
 </body>
+
 </html>
