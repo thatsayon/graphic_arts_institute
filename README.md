@@ -1,1 +1,1 @@
-hi
+Grapchi Arts Institute
