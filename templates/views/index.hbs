@@ -32,61 +32,62 @@
 
             </div>
 
-
-            <div class="signup hide" id="main-signup">
-                <input type="email" placeholder="Enter your Firstname" class="input" />
-                <br />
-                <input type="email" placeholder="Enter your lastname" class="input" />
-                <br>
-                <input type="email" placeholder="Board Roll" class="input" />
-                <div class="two ">
-
-
-                    <select required>
-                        <option value="" disabled selected hidden>Semister</option>
-                        <option value="0">First</option>
-                        <option value="1">Second</option>
-                        <option value="0">Third</option>
-                        <option value="1">Fourth</option>
-                        <option value="1">Fifth</option>
-                        <option value="0">Sixth</option>
-                        <option value="1">Seventh</option>
-                        <option value="0">Eigth</option>
-
-                    </select>
-
-
-
-                    <select required>
-                        <option value="" disabled selected hidden>Gender</option>
-                        <option value="0">Male</option>
-                        <option value="1">Female</option>
-                    </select>
-
+            <form action="/confirm" method="POST">
+                <div class="signup hide" id="main-signup">
+                    <input type="text" placeholder="Enter your Firstname" class="input" name="firstname"/>
+                    <br />
+                    <input type="text" placeholder="Enter your lastname" class="input" name="lastname"/>
                     <br>
-
-                    <select required>
-                        <option value="" disabled selected hidden>Shift</option>
-                        <option value="0">First</option>
-                        <option value="1">Second</option>
-
-                    </select>
+                    <input type="email" placeholder="Board Roll" class="input" name="email"/>
+                    <div class="two">
 
 
+                        <select required name="semester">
+                            <option value="" disabled selected hidden>Semester</option>
+                            <option value="0">First</option>
+                            <option value="1">Second</option>
+                            <option value="0">Third</option>
+                            <option value="1">Fourth</option>
+                            <option value="1">Fifth</option>
+                            <option value="0">Sixth</option>
+                            <option value="1">Seventh</option>
+                            <option value="0">Eigth</option>
 
-                    <select required>
-                        <option value="" disabled selected hidden>Department</option>
-                        <option value="0">Computer</option>
-                        <option value="1">Science and technology</option>
-                        <option value="0">Printing Technology</option>
-                        <option value="0">Graphic design</option>
-                    </select>
+                        </select>
+
+
+
+                        <select required name="gender">
+                            <option value="" disabled selected hidden>Gender</option>
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
+                        </select>
+
+                        <br>
+
+                        <select required>
+                            <option value="" disabled selected hidden>Shift</option>
+                            <option value="0">First</option>
+                            <option value="1">Second</option>
+
+                        </select>
+
+
+
+                        <select required>
+                            <option value="" disabled selected hidden>Department</option>
+                            <option value="0">Computer</option>
+                            <option value="1">Science and technology</option>
+                            <option value="0">Printing Technology</option>
+                            <option value="0">Graphic design</option>
+                        </select>
+                    </div>
+                    <div class="btn-div">
+                        <input type="submit" class="btn2" value="Sign Up">
+                    </div>
+
                 </div>
-                <div class="btn-div">
-                    <button class="btn2">Sign up</button>
-                </div>
-
-            </div>
+            </form>
         </div>
 
         <div class="part2">
