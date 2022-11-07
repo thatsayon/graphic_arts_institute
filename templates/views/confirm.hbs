@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{>confirm_header}}
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="zero">
+
+
+            <div class="first">
+                <h1>Graphics Arts Institute</h1>
+                <br>
+                <p class="p">First Name:{{firstname}}.</p>
+                <br>
+                <p class="p">Last Name: {{lastname}}.</p>
+                <br>
+                <p class="p">Board Roll: {{boardroll}}</p>
+                <br>
+                <p class="p">Shift: {{shift}}.</p>
+                <br>
+                <p class="p">Department: {{department}}.</p>
+                <br>
+                <p class="p">Semister: {{semester}}.</p>
+                <br>
+                <p class="p">Gender: {{gender}}</p>
+                <br>
+                <p class="p1">Is everything correct ?</p>
+                <br>
+                <a href="#">No</a>
+                <a href="#" id="yes">Yes</a>
+
+            </div>
+
+            <div class="second overlay" id="second">
+
+                <p class="second-p">You have to upload some documents</p>
+
+
+                <label for="image" class="label-class">
+                    <img src="image-outline.svg" alt="image" class="im">
+
+                    <p class="p-image"> Upload image </p>
+                </label>
+
+
+                <input type="file" id="image" class="garbage">
+
+
+                <form action="/chat" method="POST">
+                    <div class="input-div">
+                        <input type="number" class="password-input" placeholder="Board Roll" name="boardroll">
+                        <br>
+                        <input type="text" class="password-input" placeholder="Password" name="password">
+                        <br>
+                        <input type="text" class="password-input" placeholder="Confirm Password" name="conpassword">
+                        <br>
+                        <br>
+                        <input type="submit" class="btn" value="Sign Up">
+
+                    </div>
+                </form>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+        document.getElementById('yes').addEventListener('click', () => {
+            document.getElementById('second').classList.remove('overlay')
+        })
+
+    </script>
+</body>
+
+</html>

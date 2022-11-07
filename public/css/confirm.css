@@ -1,0 +1,159 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  
+  :root{
+    --white: #FFFFFF;
+    --black: #000000;
+  }
+  
+  
+  .main{
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    user-select: none;
+  
+  }
+  .zero{
+    width: 700px;
+    height: 510px;
+    background-color:var(--black);
+    display: flex;
+    border-radius: 40px;
+  }
+  
+  /* -----------First---------*/
+  .first{
+    width: 350px;
+    height: 510px;
+    background-color: var(--black);
+    float: left;
+    border-radius: 30px;
+    
+  }
+  h1{
+    margin-top: 15px;
+    margin-left: 18px;
+    font-size: 27px;
+    color:var(--white);
+   
+  }
+  .p{
+    display:inline-block;
+    color: var(--white);
+    font-size: 20px;
+    margin-left: 18px;
+    margin-bottom: 15px;
+  }
+  .p1{
+    margin-top: 10px;
+    color: var(--white);
+    font-size: 20px;
+    margin-left: 70px;
+  
+  }
+  a{
+    color: var(--white);
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 90px;
+  }
+  a:hover{
+    color: aqua;
+  }
+  
+  
+  
+  /*--------Second-----------*/
+  
+  .overlay:after {
+    content:'';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(130, 130, 130, 0.5);
+    opacity:1;
+    transition: all 0.5s;
+    border-radius: 0px 30px 30px 30px;
+   
+  }
+  
+  
+  .second{
+    width: 350px;
+    height: 510px;
+    background-color: aqua;
+    border-radius: 0px 30px 30px 30px;
+    float: right;
+    position: relative;
+  }
+  
+  .second-p{
+    color: var(--white);
+    font-size: 22px;
+    margin-top: 10px;
+    margin-left: 50px;
+    
+  }
+  
+  .label-class{
+    cursor: pointer;
+    font-size: large;
+    font-weight: bolder;
+    display: inline-block;
+    border: 2px dotted var(--black);
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: 90px;
+    padding: 10px;
+    align-items: center;
+  }
+  .p-image{
+    margin-left: 25px;
+    font-family: cursive;
+  }
+  
+  .garbage{
+    display: none;
+  }
+  
+  .input-div{
+    margin-top: 40px;
+  }
+  
+  .password-input{
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 76px;
+    border: none;
+    border-radius: 20px;
+    font-family: cursive;
+  }
+  
+  .btn{
+    margin-left: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--black);
+    cursor: pointer;
+  }
+  .btn p{
+    font-weight: bolder;
+    color: var(--white);
+    font-family: cursive;
+  }
+  .btn:hover{
+    background-color: white;
+    
+  }
+  .btn p:hover{
+    color: black;
+  }

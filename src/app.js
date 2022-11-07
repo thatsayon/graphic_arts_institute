@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const path = require("path")
 const app = express();
 const hbs = require('hbs')
-const Register = require("./models/registers")
+const Register = require("./models/registers");
+const async = require('hbs/lib/async');
 const PORT = process.env.PORT || 3000;
 
 const uri = "mongodb+srv://ayon:400220821fjw0676@cluster0.zkeepbh.mongodb.net/GAI?retryWrites=true&w=majority"
@@ -35,7 +36,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/confirm', (req, res) => {
-    res.send("Confirm")
+    res.render('confirm')
 });
 
 app.post('/confirm', async (req, res) => {
@@ -47,12 +48,44 @@ app.post('/confirm', async (req, res) => {
             semester : req.body.semester,
             gender : req.body.gender,
             shift : req.body.shift,
-            department : req.body.department
+            department : req.body.department,
+            password : "123456"
         })
 
         const register = await registerUser.save()
-        res.status(201).render("index");
+        res.status(201).render("confirm", {
+            firstname : req.body.firstname,
+            lastname : req.body.lastname,
+            boardroll : req.body.boardroll,
+            semester : req.body.semester,
+            gender : req.body.gender,
+            shift : req.body.shift,
+            department : req.body.department
+        });
     } catch (error) {
+        res.status(400).send(error);
+    }
+})
+
+app.get('/chat', (req, res)=> {
+    res.render("chat")
+})
+
+app.post('/chat', async(req, res) => {
+    try {
+        password = req.body.password;
+        confirmPassword = req.body.conpassword;
+        if(password == confirmPassword){
+            boardrolla = req.body.boardroll;
+            var query = {boardroll:boardrolla};
+            var newQuery = {$set: {password:password}};
+            Register.updateOne(query, newQuery, (err, res) => {
+                if(err) throw err;
+                console.log("done")
+            })
+        } 
+        res.render('chat')
+    } catch(error) {
         res.status(400).send(error);
     }
 })
