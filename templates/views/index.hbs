@@ -20,14 +20,16 @@
                 </ul>
             </div>
 
-            <form action="/confirm">
+            <form action="/auth" method="POST">
                 <div class="login " id="main-login">
-                    <input type="email" placeholder="Enter your boardroll" class="input" />
+                    <input type="number" placeholder="Enter your boardroll" class="input" name="boardroll"/>
                     <br />
-                    <input type="email" placeholder="Enter password" class="input" />
+                    <input type="text" placeholder="Enter password" class="input" name="pass"/>
 
                     <div class="container"><a href="#" class="for">Forgot Password?</a>
-                        <button class="btn">Login</button>
+                        {{!-- <button class="btn">Login</button> --}}
+
+                        <input type="submit" class="btn" value="Sign Up">
                     </div>
 
                 </div>

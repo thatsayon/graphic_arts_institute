@@ -89,6 +89,33 @@ app.post('/chat', async(req, res) => {
         res.status(400).send(error);
     }
 })
+
+
+app.post('/auth', async(req, res) => {
+    try {
+        boardroll = req.body.boardroll;
+        console.log(boardroll);
+        const data = Register.find({boardroll:boardroll}, (err, data) => {
+            if(err){
+                console.log(err);
+            } else {
+                if(data.length == 0){
+                    res.redirect('/');
+                } else {
+                    if(data[0].password == req.body.pass){
+                        res.redirect('chat');
+                    } else {
+                        res.redirect('/');
+                    }
+                }
+            }
+        })
+        console.log(data)
+    } catch(error){
+        res.status(400).send(error);
+    }
+})
+
 app.listen(PORT, () => {
     console.log(`The server is running on ${PORT}`)
 })
