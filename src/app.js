@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const flash = require('connect-flash');
 const path = require("path")
 const app = express();
 const hbs = require('hbs')
@@ -31,8 +33,17 @@ app.set("view engine", "hbs");
 app.set("views", templates_path);
 hbs.registerPartials(partials_path);
 
+
+app.use(session({
+    secret: 'midgeneration',
+    saveUninitialized: true,
+    resave: true
+}));
+
+app.use(flash());
+
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', {val:req.flash('wrong')})
 });
 
 app.get('/confirm', (req, res) => {
@@ -105,6 +116,7 @@ app.post('/auth', async(req, res) => {
                     if(data[0].password == req.body.pass){
                         res.redirect('chat');
                     } else {
+                        req.flash('wrong', 'Wrong Board Roll or Password')
                         res.redirect('/');
                     }
                 }
